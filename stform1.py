@@ -15,6 +15,8 @@ st.markdown("""
 <h1> User Registration Form </h1>
 """,unsafe_allow_html=True)
 
+st.sidebar.write('Hello this is my sidebar')
+
 form = st.form('form1')
 name = form.text_input("first name")
 sub = form.form_submit_button('Submit')
@@ -31,5 +33,8 @@ with st.form('myform'):
     d['password']=st.text_input('Password')
     d['confirm password']=st.text_input('Confirm password')
     su = st.form_submit_button('submit')
-if su:
-    st.write("Entered deatils are :",d)
+    if su:
+        if d['first Name']=="" and d['second name']=="":
+            st.warning('Please fill the fields')
+        else:
+            st.success('successfully submitted')
